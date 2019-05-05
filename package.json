@@ -7,8 +7,8 @@
   "main": "app.js",
   "scripts": {
     "client-install": "cd client && yarn install",
-    "server-start": "node app.js",
-    "server-dev": "nodemon app.js",
+    "start": "node app.js",
+    "start-dev": "nodemon app.js",
     "client-start": "cd client && yarn start",
     "client-build": "cd client && yarn build",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
