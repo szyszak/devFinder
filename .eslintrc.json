@@ -1,0 +1,16 @@
+{
+  "extends": ["airbnb-base"],
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "no-console": "off",
+    "linebreak-style": "off",
+    "prefer-destructuring": "off",
+    "class-methods-use-this": "off",
+    "no-plusplus": "off",
+    "max-len": "off",
+    "no-shadow": "off",
+    "no-underscore-dangle": ["error", { "allow": ["_id"] }]
+  }
+}

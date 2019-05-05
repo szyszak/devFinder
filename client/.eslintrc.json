@@ -1,0 +1,15 @@
+{
+  "extends": "react-app",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "no-console": "off",
+    "linebreak-style": "off",
+    "no-plusplus": "off",
+    "no-restricted-syntax": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "no-useless-constructor": "off"
+  }
+}
