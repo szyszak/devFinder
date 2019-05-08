@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { getUsers } from "../actions/actions";
@@ -13,19 +14,22 @@ const Grid = styled.div`
   grid-template-rows: auto auto;
   grid-template-areas:
     "pic info"
-    "skills bio";
+    "skills bio"
+    "go-back hire";
   max-width: 1000px;
   margin: auto;
   padding-bottom: 60px;
 
   @media (max-width: 800px) {
     grid-template-columns: auto;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(6, auto);
     grid-template-areas:
       "pic"
       "info"
       "skills"
-      "bio";
+      "bio"
+      "hire"
+      "go-back";
   }
 `;
 
@@ -114,6 +118,46 @@ const BioText = styled.p`
   }
 `;
 
+const BtnBackWrapper = styled.div`
+  grid-area: go-back;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const BtnBack = styled(NavLink)`
+  width: 120px;
+  padding: 10px 0;
+  background-color: #47a7ff;
+  border: none;
+  border-radius: 7px;
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+`;
+
+const BtnHireWrapper = styled.div`
+  grid-area: hire;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const BtnHire = styled.button`
+  grid-area: hire;
+  width: 120px;
+  padding: 10px 0;
+  background-color: #47a7ff;
+  border: none;
+  border-radius: 7px;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+`;
+
 // COMPONENT
 
 class User extends Component {
@@ -179,6 +223,18 @@ class User extends Component {
             <BioHeader>About me:</BioHeader>
             <BioText>{bio}</BioText>
           </BioWrapper>
+
+          <BtnBackWrapper>
+            <BtnBack to="/" exact>
+              Go back
+            </BtnBack>
+          </BtnBackWrapper>
+
+          <BtnHireWrapper>
+            <BtnHire onClick={() => alert("App functionality ends here. :/")}>
+              Hire me!
+            </BtnHire>
+          </BtnHireWrapper>
         </Grid>
       );
     }
@@ -186,11 +242,6 @@ class User extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  // return {
-  //   userData: state.users.publicData.find(
-  //     user => user._id === ownProps.match.params.id
-  //   )
-  // };
   return {
     userData: state.users.publicData.find(
       user => user._id === ownProps.match.params.id

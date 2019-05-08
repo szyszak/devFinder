@@ -78,7 +78,7 @@ class UserCard extends Component {
   constructor(props) {
     super(props);
 
-    this.MAX_SKILLS = 4;
+    this.MAX_SKILLS = 4; // maximum number of skills to be displayed on the home page
   }
 
   renderSkills = skills => {
