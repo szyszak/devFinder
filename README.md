@@ -1,6 +1,6 @@
 # devFinder app
 
-Live demo: [https://szyszak-devfinder.herokuapp.com/](https://szyszak-devfinder.herokuapp.com/)
+Live demo: [https://devfinder.krzysztofszyszko.pl/](https://devfinder.krzysztofszyszko.pl/)
 
 ## Installation:
 
